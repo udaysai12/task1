@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+.carousel-container {
+    margin-bottom: 30px;
+    overflow: hidden; 
+    width: 100%; 
+}
+
+.carousel {
+    display: flex;
+    animation: slide 10s infinite linear; 
+}
+
+.carousel img {
+    width: 100%;
+    object-fit: cover;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    14.28% {
+        transform: translateX(0); 
+    }
+    28.56% {
+        transform: translateX(-100%); 
+    }
+    42.84% {
+        transform: translateX(-100%); 
+    }
+    57.12% {
+        transform: translateX(-200%); 
+    }
+    71.40% {
+        transform: translateX(-200%); 
+    }
+    85.68% {
+        transform: translateX(-300%); 
+    }
+    100% {
+        transform: translateX(-300%); 
+    }
+}
+
+.sd-container {
+    display: flex;
+    height: 100%;
+}
+
+.sd {
+    width: 250px;
+    margin-top: 60px;
+    background-color: #a4d8e6;
+    color: rgb(96, 5, 241);
+    padding: 30px;
+    display: none;
+}
+.title {
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none; 
+    color: #ff0000;
+    font-weight: bold;
+    font-variant: small-caps;
+    padding-bottom: 5px;
+    display: inline-block;
+    width: auto; 
+}
+
+hr {
+    width: 100%;
+    border: 1px solid #218838;
+    background-color: #218838; 
+    margin-top: 10px; 
+}
+.checkbox{
+    position: relative;
+  margin:20px;
+  left: 0;
+  height: 1.3em;
+  width: 1.3em;
+  background-color: #2196F300;
+  border-radius: 0.25em;
+  transition: all 0.25s;
+}
+.container input:checked ~ .checkbox  {
+    background-color: #2196F3;
+  }
+  .checkbox:after {
+    content: "";
+    position: absolute;
+    transform: rotate(0deg);
+    border: 0.1em solid black;
+    left: 0;
+    top: 0;
+    width: 1.05em;
+    height: 1.05em;
+    border-radius: 0.25em;
+    transition: all 0.25s, border-width 0.1s;
+  }
+  
+  .container input:checked ~ .checkbox:after {
+    left: 0.45em;
+    top: 0.25em;
+    width: 0.25em;
+    height: 0.5em;
+    border-color: #fff0 white white #fff0;
+    border-width: 0 0.15em 0.15em 0;
+    border-radius: 0em;
+  }
+.toggle-sd{
+    padding: 10px;
+}
+.sd.active {
+    display: block;
+
+}
+
+.main-content {
+    width: 100%;
+}
+
+.toggle-sd {
+    margin: 10px;
+    cursor: pointer;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.product-item {
+    background-color: white;
+    padding: 15px; 
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.pagination {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.pagination a {
+
+    color: #ffffff;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    background-color: #0c6680;
+
+    margin: 0 5px;
+}
+
+.pagination a:hover {
+    background-color: #333;
+    color: white;
+}
+
+.cform {
+    background-color: white;
+    padding: 20px;
+    max-width: 400px;
+    margin: 30px auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cform label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.cform input,
+.cform textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+}
+
+.cform button {
+    background-color: #a4d8e6;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.cform button:hover {
+    background-color: #213c88;
+}
+
+@media (max-width: 768px) {
+    .sd {
+        width: 100%;
+        margin-top: 0px;
+        background-color: #a4d8e6;
+        color: white;
+        padding: 20px;
+        display: none; 
+    }
+
+    .carousel img {
+        width: 100%;
+        object-fit: cover;
+        scroll-snap-align: center;
+    }
+
+    .sd-container {
+        flex-direction: column;
+        display: flex;
+        height: 100%;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr; 
+    }
+
+    .pagination {
+        top: 20%;
+        text-align: center;
+        margin: 10px 0;
+    }
+}
