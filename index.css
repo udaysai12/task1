@@ -17,6 +17,10 @@ body {
     color: white;
     font-size: 24px;
 }
+#navbarToggle {
+    display: none;
+}
+
 
 .navbar-items {
     list-style: none;
